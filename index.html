@@ -2,18 +2,90 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>QR Code Generator - Buat QR Code Gratis</title>
+  <!-- =========================
+       SEO
+       ========================= -->
+
+  <title>QR Code Generator - Buat QR Code Gratis Online</title>
 
   <meta
     name="description"
-    content="Buat QR Code gratis dengan cepat. Masukkan teks atau URL, generate QR Code, lalu download sebagai gambar PNG."
+    content="Buat QR Code gratis online dari teks atau URL dengan cepat dan mudah. Generate dan download QR Code sebagai gambar PNG."
   >
 
-  <meta name="robots" content="index, follow">
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <meta
+    name="author"
+    content="QR Code Generator"
+  >
+
+  <link
+    rel="canonical"
+    href="https://videosave-source.github.io/qr-code-generator-online/"
+  >
+
+  <!-- =========================
+       OPEN GRAPH
+       ========================= -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="QR Code Generator - Buat QR Code Gratis Online"
+  >
+
+  <meta
+    property="og:description"
+    content="Buat dan download QR Code dari teks atau URL dengan cepat dan gratis."
+  >
+
+  <meta
+    property="og:url"
+    content="https://videosave-source.github.io/qr-code-generator-online/"
+  >
+
+  <meta
+    property="og:site_name"
+    content="QR Code Generator"
+  >
+
+  <!-- =========================
+       TWITTER
+       ========================= -->
+
+  <meta
+    name="twitter:card"
+    content="summary"
+  >
+
+  <meta
+    name="twitter:title"
+    content="QR Code Generator - Buat QR Code Gratis Online"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Buat QR Code gratis dari teks atau URL dan download sebagai PNG."
+  >
+
+
+  <!-- =========================
+       STYLE
+       ========================= -->
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,12 +95,20 @@
 
     body {
       min-height: 100vh;
+
       background:
-        radial-gradient(circle at top, #252525, #0d0d0d 60%);
+        radial-gradient(
+          circle at top,
+          #252525,
+          #0d0d0d 60%
+        );
+
       color: white;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       padding: 20px;
@@ -52,29 +132,37 @@
 
     .logo {
       font-size: 48px;
+
       margin-bottom: 8px;
     }
 
     h1 {
       font-size: 28px;
+
       margin-bottom: 8px;
     }
 
     .subtitle {
       color: #999;
+
       font-size: 14px;
+
       line-height: 1.5;
+
       margin-bottom: 24px;
     }
 
     .input-box {
       display: flex;
+
       flex-direction: column;
+
       gap: 10px;
     }
 
     textarea {
       width: 100%;
+
       min-height: 100px;
 
       resize: vertical;
@@ -82,6 +170,7 @@
       padding: 15px;
 
       border: 1px solid #333;
+
       outline: none;
 
       border-radius: 12px;
@@ -103,8 +192,9 @@
       color: #666;
     }
 
+
     /* =========================
-       TOMBOL GENERATE
+       GENERATE BUTTON
        ========================= */
 
     .generate-btn {
@@ -116,24 +206,28 @@
 
       border-radius: 12px;
 
-      background: linear-gradient(
-        135deg,
-        #ff0066,
-        #ff7a00
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #ff0066,
+          #ff7a00
+        );
 
       color: white;
 
       font-size: 16px;
+
       font-weight: bold;
 
       cursor: pointer;
 
       margin-top: 12px;
 
-      box-shadow: 0 0 0 rgba(255, 0, 102, 0.7);
+      box-shadow:
+        0 0 0 rgba(255, 0, 102, 0.7);
 
-      animation: pulse 2s infinite;
+      animation:
+        pulse 2s infinite;
 
       transition: 0.2s;
     }
@@ -143,18 +237,27 @@
     }
 
     @keyframes pulse {
+
       0% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 102, 0.65);
+        box-shadow:
+          0 0 0 0
+          rgba(255, 0, 102, 0.65);
       }
 
       70% {
-        box-shadow: 0 0 0 14px rgba(255, 0, 102, 0);
+        box-shadow:
+          0 0 0 14px
+          rgba(255, 0, 102, 0);
       }
 
       100% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 102, 0);
+        box-shadow:
+          0 0 0 0
+          rgba(255, 0, 102, 0);
       }
+
     }
+
 
     /* =========================
        QR AREA
@@ -177,8 +280,11 @@
     }
 
     #qrcode {
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
       background: white;
@@ -187,12 +293,14 @@
 
       width: fit-content;
 
-      margin: 0 auto 15px;
+      margin:
+        0 auto 15px;
 
       border-radius: 10px;
     }
 
     .download-qr {
+
       display: block;
 
       width: 100%;
@@ -216,10 +324,14 @@
 
     .download-qr:hover {
       background: #3a3a3a;
+
+      transform:
+        translateY(-2px);
     }
 
+
     /* =========================
-       CUSTOM LINK BUTTONS
+       CUSTOM LINKS
        ========================= */
 
     .links {
@@ -227,6 +339,7 @@
     }
 
     .custom-link {
+
       display: block;
 
       width: 100%;
@@ -249,11 +362,20 @@
     }
 
     .custom-link:hover {
+
       background: #3a3a3a;
-      transform: translateY(-2px);
+
+      transform:
+        translateY(-2px);
     }
 
+
+    /* =========================
+       INFO
+       ========================= */
+
     .info {
+
       margin-top: 20px;
 
       padding: 14px;
@@ -270,6 +392,7 @@
     }
 
     .footer {
+
       margin-top: 18px;
 
       color: #555;
@@ -277,10 +400,16 @@
       font-size: 11px;
     }
 
+
+    /* =========================
+       MOBILE
+       ========================= */
+
     @media (max-width: 450px) {
 
       .container {
-        padding: 25px 16px;
+        padding:
+          25px 16px;
       }
 
       h1 {
@@ -288,73 +417,112 @@
       }
 
     }
+
   </style>
 
 </head>
+
 
 <body>
 
   <main class="container">
 
-    <div class="logo">
-      📱
-    </div>
 
-    <h1>
-      QR Code Generator
-    </h1>
+    <!-- =========================
+         HEADER
+         ========================= -->
 
-    <p class="subtitle">
-      Buat QR Code dari teks atau URL dengan cepat dan gratis
-    </p>
+    <header>
 
-
-    <div class="input-box">
-
-      <textarea
-        id="qrText"
-        placeholder="Masukkan teks atau link di sini..."
-        aria-label="Teks atau URL untuk QR Code"
-      ></textarea>
-
-      <button
-        class="generate-btn"
-        onclick="generateQR()"
+      <div
+        class="logo"
+        aria-hidden="true"
       >
-        ⚡ Generate QR Code
-      </button>
+        📱
+      </div>
 
-    </div>
+      <h1>
+        QR Code Generator
+      </h1>
+
+      <p class="subtitle">
+        Buat QR Code dari teks atau URL
+        dengan cepat dan gratis
+      </p>
+
+    </header>
 
 
     <!-- =========================
-         QR RESULT
+         QR GENERATOR
          ========================= -->
 
     <section
-      id="qrArea"
-      class="qr-area"
+      aria-label="QR Code Generator"
     >
 
-      <div id="qrcode"></div>
+      <div class="input-box">
 
-      <a
-        id="downloadQR"
-        class="download-qr"
-        href="#"
+        <label
+          for="qrText"
+          hidden
+        >
+          Teks atau URL
+        </label>
+
+        <textarea
+          id="qrText"
+          placeholder="Masukkan teks atau link di sini..."
+          aria-label="Teks atau URL untuk QR Code"
+          autocomplete="off"
+        ></textarea>
+
+
+        <button
+          type="button"
+          class="generate-btn"
+          onclick="generateQR()"
+        >
+          ⚡ Generate QR Code
+        </button>
+
+      </div>
+
+
+      <!-- =========================
+           QR RESULT
+           ========================= -->
+
+      <div
+        id="qrArea"
+        class="qr-area"
       >
-        ⬇️ Download QR Code
-      </a>
+
+        <div id="qrcode"></div>
+
+        <a
+          id="downloadQR"
+          class="download-qr"
+          href="#"
+          download="qr-code.png"
+        >
+          ⬇️ Download QR Code
+        </a>
+
+      </div>
 
     </section>
 
 
     <!-- =========================
-         LINK CUSTOM
-         GANTI LINK DI BAWAH
+         CUSTOM LINKS
+         GANTI LINK DI SINI
          ========================= -->
 
-    <div class="links">
+    <nav
+      class="links"
+      aria-label="Link alternatif"
+    >
 
       <a
         class="custom-link"
@@ -385,24 +553,46 @@
         🔗 Link Alternatif 3
       </a>
 
-    </div>
+    </nav>
 
 
-    <div class="info">
+    <!-- =========================
+         SEO CONTENT
+         ========================= -->
 
-      💡 <strong>Cara menggunakan:</strong>
+    <section class="info">
+
+      <strong>
+        QR Code Generator
+      </strong>
+
       <br>
 
-      Masukkan teks atau URL,
-      kemudian tekan tombol Generate QR Code.
-      Setelah QR muncul, tekan Download untuk
-      menyimpan QR Code sebagai gambar.
+      Buat QR Code gratis secara online
+      dari teks atau URL dengan mudah.
 
-    </div>
+      Masukkan informasi yang ingin
+      diubah menjadi QR Code, lalu tekan
+      tombol Generate QR Code.
 
+      <br><br>
+
+      Setelah QR Code dibuat, lu bisa
+      langsung menyimpannya sebagai
+      gambar PNG menggunakan tombol
+      Download QR Code.
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
 
     <footer class="footer">
+
       © 2026 QR Code Generator
+
     </footer>
 
   </main>
@@ -417,94 +607,38 @@
   ></script>
 
 
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
   <script>
 
     function generateQR() {
 
       const text =
-        document.getElementById("qrText").value.trim();
+        document
+          .getElementById("qrText")
+          .value
+          .trim();
+
 
       const qrArea =
-        document.getElementById("qrArea");
+        document
+          .getElementById("qrArea");
+
 
       const qrContainer =
-        document.getElementById("qrcode");
+        document
+          .getElementById("qrcode");
+
 
       const download =
-        document.getElementById("downloadQR");
+        document
+          .getElementById("downloadQR");
 
 
       if (text === "") {
 
         alert(
-          "Masukkan teks atau URL terlebih dahulu!"
-        );
-
-        return;
-      }
-
-
-      // Hapus QR sebelumnya
-
-      qrContainer.innerHTML = "";
-
-
-      // Generate QR
-
-      new QRCode(qrContainer, {
-
-        text: text,
-
-        width: 220,
-
-        height: 220,
-
-        colorDark: "#000000",
-
-        colorLight: "#ffffff",
-
-        correctLevel: QRCode.CorrectLevel.H
-
-      });
-
-
-      qrArea.classList.add("show");
-
-
-      // Tunggu canvas/image selesai dibuat
-
-      setTimeout(() => {
-
-        const canvas =
-          qrContainer.querySelector("canvas");
-
-        const image =
-          qrContainer.querySelector("img");
-
-
-        if (canvas) {
-
-          download.href =
-            canvas.toDataURL("image/png");
-
-          download.download =
-            "qr-code.png";
-
-        } else if (image) {
-
-          download.href =
-            image.src;
-
-          download.download =
-            "qr-code.png";
-
-        }
-
-      }, 300);
-
-    }
-
-  </script>
-
-</body>
-</html>
+         
+```
